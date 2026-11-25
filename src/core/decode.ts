@@ -4,7 +4,8 @@
  * @example
  * decode('aGVsbG8=') // 'hello'
  */
-export const decode = (base64: string): string =>
-  new TextDecoder().decode(
+export function decode(base64: string): string {
+  return new TextDecoder().decode(
     Uint8Array.from(atob(base64), (c) => c.charCodeAt(0)),
   );
+}

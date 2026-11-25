@@ -4,5 +4,6 @@
  * @example
  * encode('hello') // 'aGVsbG8='
  */
-export const encode = (text: string): string =>
-  btoa(String.fromCharCode(...new TextEncoder().encode(text)));
+export function encode(text: string): string {
+  return btoa(String.fromCharCode(...new TextEncoder().encode(text)));
+}

@@ -1,15 +1,13 @@
 #!/usr/bin/env node
-
 import { Command, CommandError } from '@dephub/command';
 
-import { decode } from './core/decode.js';
-import { encode } from './core/encode.js';
-import { description, name, version } from './utils/pkg.js';
+import { decode } from '#/core/decode.ts';
+import { encode } from '#/core/encode.ts';
 
 const cmd = new Command()
-  .name(name.split('/')[1] ?? 'base64')
-  .version(version)
-  .description(description);
+  .name(__PKG_NAME__.split('/')[1])
+  .description(__PKG_DESCRIPTION__)
+  .version(__PKG_VERSION__);
 
 cmd
   .command('encode', 'Encode string to Base64')
